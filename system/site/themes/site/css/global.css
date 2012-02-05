@@ -15,7 +15,7 @@ header #logo h1 { font-size: 22px; }
 header #logo h2 { font-size: 12px; color: #59626e; letter-spacing: 0.5px; float: right; }
 
 /* Dashboard */
-#dashboard-title { margin:10px; text-align:center; }
+#dashboard-logo { margin-top:30px; text-align:center; }
 #dashboard-actions { width:100%; }
 #dashboard-actions ul {margin:50px; 10px;}
 #dashboard-actions ul li{

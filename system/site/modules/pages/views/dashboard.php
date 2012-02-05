@@ -1,2 +1,2 @@
-<div id="dashboard-title"><h1>Welcome to Vidya Vahini School</h1></div>
+<div id="dashboard-logo"><a href="/"><img src="<?php echo base_url(); ?>system/site/themes/site/img/logo.png"/></a></div>
 <div id="dashboard-actions"><?php echo Modules::run('y3kmenu/dashboard'); ?></div>
