@@ -1,8 +1,9 @@
 /* Let's begin! */
-body { background-color: #2D303B; overflow-x: hidden; }
+body { background-color: #2D303B; overflow: hidden; position:absolute;top:0;bottom:0;left:0;right:0;}
 .clr { clear:both;}
 ul { list-style:none; }
 
+#container, #content-body { height:100%; }
 
 /* Header */
 header {
@@ -51,6 +52,8 @@ header #logo h2 { font-size: 12px; color: #59626e; letter-spacing: 0.5px; float:
 	-moz-box-shadow:0 2px 4px #cdcdcd;
 	-webkit-box-shadow:0 2px 4px #cdcdcd;
 }
+
+nav { width:200px;padding-top:10px;border-right:1px solid #161820; height:100%;}
 
 /* Footer */
 footer {

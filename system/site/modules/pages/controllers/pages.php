@@ -19,15 +19,15 @@ class Pages extends Public_Controller
 	 */
 	public function index()
 	{
-		$this->_dashboard();
+		$this->dashboard();
 	}
 
 	/**
-	 * home page method
+	 * dashboard method
 	 * @access public
 	 * @return void
 	 */
-	public function _dashboard()
+	public function dashboard()
 	{
 		//helper to load partials
 		$this->load->helper('admin_theme');
@@ -37,4 +37,21 @@ class Pages extends Public_Controller
 
 		echo $this->template->build('pages/dashboard', null, TRUE, FALSE);
 	}
+
+	/**
+	* home method
+	* @access public
+	* @return void
+	*/
+	public function home()
+	{
+		//helper to load partials
+		$this->load->helper('admin_theme');
+	
+		// Create page output
+		$this->template->title('Home');
+	
+		echo $this->template->build('pages/home', null, TRUE, FALSE);
+	}
+	
 }

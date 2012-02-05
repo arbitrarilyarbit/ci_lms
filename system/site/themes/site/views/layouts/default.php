@@ -6,13 +6,10 @@
 <body>
 	<!-- Begin pageWrapper -->
 	<div id="container">
-		<section id="content">	
-			<?php file_partial('header'); ?>
-			<div id="content-body">
-				<?php echo $template['body']; ?>
-			</div>
-		</section>
-
+		<?php file_partial('header'); ?>
+		<div id="content-body">
+			<?php echo $template['body']; ?>
+		</div>
 	</div>
 	<!-- End pageWrapper -->
 	
