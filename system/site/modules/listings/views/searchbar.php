@@ -1,0 +1,1 @@
+<li id="menu-search"><input type="text" id="search" name="search" maxlength="120" placeholder="Search Business Listing" /><img style="width: 25px; vertical-align: middle;" src="<?php echo base_url();?>system/site/themes/site/img/bullet.png"/></li>

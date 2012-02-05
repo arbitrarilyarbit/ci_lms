@@ -1,0 +1,261 @@
+/* Begin: Page top Banner */
+#banner { width: 1000px; height: 150px; padding: 5px 0 5px 0; margin: 0 auto; border-top: 1px solid #efefef;}
+/* End: Page top Banner */
+
+/* Begin: Categories on Home Page */
+.categories ul {
+	margin-top:10px;
+}
+.categories ul li{
+	display:block;
+	width:49%;
+	height:80px;
+	float:left;
+	margin:0 2px 4px 2px;
+	text-align:center;
+	position:relative;
+}
+.categories ul li a{
+	padding:5px 2px;
+	display:block;
+	width:95%;
+	min-height:80px;
+	background-color:#eee;
+	transition:background-color .4s linear;
+	-o-transition:background-color .4s linear;
+	-moz-transition:background-color .4s linear;
+	-webkit-transition:background-color .4s linear;
+}
+.categories ul li a:hover{
+	background-color:#f7f7f7;
+	border-radius:4px;
+	transition:background-color .11s linear;
+	-o-transition:background-color .11s linear;
+	-moz-transition:background-color .11s linear;
+	-webkit-transition:background-color .11s linear;
+	box-shadow:0 2px 4px #cdcdcd;
+	-o-box-shadow:0 2px 4px #cdcdcd;
+	-moz-box-shadow:0 2px 4px #cdcdcd;
+	-webkit-box-shadow:0 2px 4px #cdcdcd;
+}
+.categories ul li h3{
+	font-size:13px;
+	font-weight:bold;
+	width:90%;
+	margin:5px 0 4px 5%;
+	transition:color .18s linear;
+	-o-transition:color .18s linear;
+	-moz-transition:color .18s linear;
+	-webkit-transition:color .18s linear;
+	padding: 0;
+}
+.categories ul li:hover h3{
+	color:#b41e21;
+}
+.categories ul li p{
+	font-size:11px;
+	width:90%;
+	margin-left:5%;
+	color:#999;
+	padding-bottom:5px;
+}
+.categories ul img {
+	float:left;
+	width: 75px;
+	height: 75px;
+}
+/* End: Categories on Home Page */
+
+/* Begin: Search Results */
+section.post .srch-listing ul {
+	margin-top:10px;
+	padding:0 10px 0 0;
+	list-style:none;
+}
+.srch-listing ul li{
+	display:block;
+	width:100%;
+	height:80px;
+	float:left;
+	margin:0 2px 4px 2px;
+	position:relative;
+}
+.srch-listing ul li a{
+	padding:5px 2px;
+	display:block;
+	width:100%;
+	height:80px;
+	background-color:#eee;
+	transition:background-color .4s linear;
+	-o-transition:background-color .4s linear;
+	-moz-transition:background-color .4s linear;
+	-webkit-transition:background-color .4s linear;
+}
+.srch-listing ul li a:hover{
+	background-color:#f7f7f7;
+	border-radius:4px;
+	transition:background-color .11s linear;
+	-o-transition:background-color .11s linear;
+	-moz-transition:background-color .11s linear;
+	-webkit-transition:background-color .11s linear;
+	box-shadow:0 2px 4px #cdcdcd;
+	-o-box-shadow:0 2px 4px #cdcdcd;
+	-moz-box-shadow:0 2px 4px #cdcdcd;
+	-webkit-box-shadow:0 2px 4px #cdcdcd;
+}
+.srch-listing ul li h3{
+	font-size:13px;
+	font-weight:bold;
+	margin:5px 0 4px 5%;
+	transition:color .18s linear;
+	-o-transition:color .18s linear;
+	-moz-transition:color .18s linear;
+	-webkit-transition:color .18s linear;
+	padding: 0;
+}
+.srch-listing ul li:hover h3{
+	color:#b41e21;
+}
+.srch-listing ul li p{
+	font-size:11px;
+	margin-left:5%;
+	color:#999;
+	padding-bottom:5px;
+}
+.srch-listing ul img {
+	float:left;
+	width: 75px;
+	height: 75px;
+	margin-right:10px;
+}
+.srch-listing .actions {
+	position:absolute;
+	top:10px;
+	right:0;
+}
+/* End: Search Results */
+
+/* Begin: Sign In/Cart Dropdown in Header */
+#signin_menu, #cart_menu {
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    display:none;
+    background-color:/*#ddeef6*/#30688E;
+    position:absolute;
+    width:210px;
+    z-index:100;
+    border:1px transparent;
+    text-align:left;
+    padding:12px;
+    top: 32px; 
+    right: 0px; 
+    margin-top:5px;
+    margin-right: 0px;
+    *margin-right: -1px;
+    color:#ffffff;
+    font-size:11px;
+}
+#signin_menu input[type=text], #signin_menu input[type=password] {
+    display:block;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border:1px solid #ACE;
+    font-size:13px;
+    margin:0 0 5px;
+    padding:5px;
+    width:203px;
+}
+#signin_menu p, #cart_menu p {
+    margin:0;
+    padding: 0 0 5px 0;
+}
+#signin_menu a, #cart_menu a {
+    color:#39D;
+}
+#signin_menu label {
+    font-weight:normal;
+}
+#signin_menu p.remember, #cart_menu p {
+    padding:10px 0;
+}
+#signin_menu p.forgot, #signin_menu p.complete {
+    clear:both;
+    margin:5px 0;
+}
+#signin_menu p a, #cart_menu p a {
+    color:#39D!important;
+}
+#signin_submit, #cart_checkout {
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    background:#39d /*url('images/bg-btn-blue.png') repeat-x scroll 0 0*/;
+    border:1px solid #39D;
+    color:#fff;
+    text-shadow:0 -1px 0 #39d;
+    padding:4px 10px 5px;
+    font-size:11px;
+    margin:0 5px 0 0;
+    font-weight:bold;
+    cursor:pointer;
+}
+#cart_checkout {
+	margin:0 5px 0 5px;
+}
+#signin_submit::-moz-focus-inner {
+	padding:0;
+	border:0;
+}
+/* End: Sign In/Cart Dropdown in Header */
+
+/* Begin: Search box */
+#srch-box {
+	border: 1px solid #dedede;
+	padding: 2px;
+	background: #DDEEF6;
+}
+#srch-box input, #srch-box select {
+	width: auto;
+}
+#srch-box select {
+	background-color: #f2f2f2;
+	border: 1px solid #ccc;
+	margin-right: 70%; 
+	border-radius: 3px; 
+	-o-border-radius: 3px; 
+	-moz-border-radius: 3px; 
+	-webkit-border-radius: 3px; 
+	padding: 1px 5px 4px 5px; 
+	font-family:  Arial, Tahoma, "Helvetica Neue", Helvetica, sans-serif; 
+	color: #4D4D4D;  
+	text-shadow: 0px 1px 0px #FBFBFB; 
+}
+#srch-box input[type="submit"] {
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    background:#39d /*url('images/bg-btn-blue.png') repeat-x scroll 0 0*/;
+    border:1px solid #39D;
+    color:#fff;
+    text-shadow:0 -1px 0 #39d;
+    padding:4px 10px 5px;
+    font-size:11px;
+    margin:0 5px 0 0;
+    font-weight:bold;
+}
+/* End: Search box */
+
+/* Begin: Alpha Listing */
+.alpha-filter {
+	text-align: center;
+	background: #39D;
+	color: #fff;
+	padding: 5px;
+	margin-top: 10px;
+}
+.alpha-filter a {
+	padding: 0 5px 0 5px;
+}
+/* End: Alpha Listing */
