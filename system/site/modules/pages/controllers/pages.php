@@ -31,10 +31,10 @@ class Pages extends Public_Controller
 	{
 		//helper to load partials
 		$this->load->helper('admin_theme');
-		
+
 		// Create page output
 		$this->template->title('Dashboard');
-		
+
 		echo $this->template->build('pages/dashboard', null, TRUE, FALSE);
 	}
 }

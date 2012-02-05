@@ -2,6 +2,8 @@
 body { background-color: #2D303B; overflow-x: hidden; }
 .clr { clear:both;}
 ul { list-style:none; }
+
+
 /* Header */
 header {
 	height: 49px;
@@ -51,7 +53,6 @@ header #logo h2 { font-size: 12px; color: #59626e; letter-spacing: 0.5px; float:
 }
 
 /* Footer */
-#footerWrapper { width: 100%; margin: 0 auto; float: left;	position:absolute; bottom:0; }
 footer {
 	height: 49px;
 	font-size: 12px; 
@@ -65,7 +66,6 @@ footer {
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
-#poweredby { margin: 12px 0 0 0; float: left; }
 
 /* Global Classes */
 .nav-splitter { font-family: Tahoma, Helvetica, sans-serif; font-size: 12px; }
