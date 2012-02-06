@@ -20,19 +20,19 @@
 	/**
 	 * Tables.
 	 **/
-	$config['tables']['groups']  = SITE_REF.'_groups';
-	$config['tables']['users']   = SITE_REF.'_users';
-	$config['tables']['meta']    = SITE_REF.'_profiles';
+	$config['tables']['groups']  = 'y3klms_groups';
+	$config['tables']['users']   = 'y3klms_users';
+	$config['tables']['meta']    = 'y3klms_profiles';
 
 	/**
 	 * Site Title, example.com
 	 */
-	$config['site_title']		   = Settings::get('site_name');
+	//$config['site_title']		   = Settings::get('site_name');
 
 	/**
 	 * Admin Email, admin@example.com
 	 */
-	$config['admin_email']		   = Settings::get('contact_email');
+	//$config['admin_email']		   = Settings::get('contact_email');
 
 	/**
 	 * Default group, use name
@@ -75,7 +75,7 @@
 	/**
 	 * Email Activation for registration
 	 **/
-	$config['email_activation']    = Settings::get('activation_email');
+	//$config['email_activation']    = Settings::get('activation_email');
 
 	/**
 	 * Allow users to be remembered and enable auto-login

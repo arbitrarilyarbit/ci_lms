@@ -20,11 +20,56 @@ class Users extends Public_Controller
 		parent::__construct();
 
 		// Load the required classes
+		$this->load->model('user_m');
+		$this->load->helper('user');
+		$this->lang->load('user');
 		$this->load->library('form_validation');
 	}
 
 	/**
-	 * login
+	 * Show the current user's profile
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function index()
+	{
+		if (isset($this->current_user->id))
+		{
+			$this->view($this->current_user->id);
+		}
+		else
+		{
+			redirect('users/login/users');
+		}
+	}
+
+	/**
+	 * View a user profile based on the ID
+	 *
+	 * @param	mixed $id The Username or ID of the user
+	 * @return	void
+	 */
+	public function view($id = NULL)
+	{
+		$user = ($this->current_user && $id == $this->current_user->id) ? $this->current_user : $this->ion_auth->get_user($id);
+		
+		// No user? Show a 404 error. Easy way for now, instead should show a custom error message
+		$user or show_404();
+		
+		// Take care of the {} braces in the content
+		foreach ($user as $field => $value)
+		{
+			$user->{$field} = escape_tags($value);
+		}
+
+		$this->template->build('profile/view', array(
+			'_user' => $user,
+		));
+	}
+
+	/**
+	 * Let's login, shall we?
 	 *
 	 * @return void
 	 */
@@ -48,12 +93,12 @@ class Users extends Public_Controller
 		$validation = array(
 			array(
 				'field' => 'email',
-				'label' => 'Email',
+				'label' => lang('user_email_label'),
 				'rules' => 'required|trim|callback__check_login'
 			),
 			array(
 				'field' => 'password',
-				'label' => 'Password',
+				'label' => lang('user_password_label'),
 				'rules' => 'required|min_length[6]|max_length[20]'
 			),
 		);
@@ -64,19 +109,21 @@ class Users extends Public_Controller
 		// If the validation worked, or the user is already logged in
 		if ($this->form_validation->run() or $this->current_user)
 		{
-			$this->session->set_flashdata('success', 'user logged in');
+			$this->session->set_flashdata('success', lang('user_logged_in'));
 
 			// Kill the session
 			$this->session->unset_userdata('redirect_to');
 
+			// Deprecated.
+			$this->hooks->_call_hook('post_user_login');
+
+			// trigger a post login event for third party devs
+			Events::trigger('post_user_login');
+
 			redirect($redirect_to ? $redirect_to : '');
 		}
 
-		//helper to load partials
-		$this->load->helper('admin_theme');
-
-		$this->template->enable_parser(FALSE)
-			->build('login', array(
+		$this->template->build('login', array(
 			'_user' => $user,
 			'redirect_to' => $redirect_to,
 		));

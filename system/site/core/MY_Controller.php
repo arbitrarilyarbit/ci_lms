@@ -33,17 +33,10 @@ class MY_Controller extends MX_Controller {
 			unset($locale);
 		}
 
-		//$this->lang->load(array('global', 'users/user'));
-
 		// Load the user model and get user data
-		//$this->load->library('users/ion_auth');
+		$this->load->library('users/ion_auth');
 
 		//$this->template->current_user = ci()->current_user = $this->current_user = $this->ion_auth->get_user();
-
-		// Work out module, controller and method and make them accessable throught the CI instance
-		//ci()->module = $this->module = $this->router->fetch_module();
-		//ci()->controller = $this->controller = $this->router->fetch_class();
-		//ci()->method = $this->method = $this->router->fetch_method();
 
 		// Loaded after $this->current_user is set so that data can be used everywhere
 		/*$this->load->model(array(
@@ -52,15 +45,6 @@ class MY_Controller extends MX_Controller {
 			'pages/page_m',
 			'themes/theme_m',
 		));
-
-		// List available module permissions for this user
-		ci()->permissions = $this->permissions = $this->current_user ? $this->permission_m->get_group($this->current_user->group_id) : array();
-
-		// Get meta data for the module
-		$this->template->module_details = ci()->module_details = $this->module_details = $this->module_m->get($this->module);
-
-		// If the module is disabled, then show a 404.
-		empty($this->module_details['enabled']) AND show_404();
 
 		if ( ! $this->module_details['skip_xss'])
 		{

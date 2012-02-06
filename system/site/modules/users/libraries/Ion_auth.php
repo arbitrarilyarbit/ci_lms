@@ -89,7 +89,6 @@ class Ion_auth
 		$this->ci->load->config('users/ion_auth', TRUE);
 		$this->ci->load->library('email');
 		$this->ci->load->library('session');
-		$this->ci->lang->load('users/ion_auth');
 		$this->ci->load->model('users/ion_auth_model');
 		$this->ci->load->helper('cookie');
 
@@ -101,11 +100,11 @@ class Ion_auth
 		$this->error_end_delimiter     = $this->ci->config->item('error_end_delimiter', 'ion_auth');
 
 		//auto-login the user if they are remembered
-		if (!$this->logged_in() && get_cookie('identity') && get_cookie('remember_code'))
+		/*if (!$this->logged_in() && get_cookie('identity') && get_cookie('remember_code'))
 		{
 			$this->ci->ion_auth = $this;
 			$this->ci->ion_auth_model->login_remembered_user();
-		}
+		}*/
 	}
 
 	/**
