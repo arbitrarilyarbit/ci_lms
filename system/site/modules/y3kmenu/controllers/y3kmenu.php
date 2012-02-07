@@ -1,6 +1,6 @@
 <?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-class Y3kmenu extends Public_Controller {
+class Y3kmenu extends Main_Controller {
 
 	/**
 	 * Constructor method
@@ -11,7 +11,7 @@ class Y3kmenu extends Public_Controller {
 		parent::__construct();
 	}
 
-	function generate() {
+	function _generate() {
 		$menu_items = $this->config->item('dashboard');
 		return $menu_items;
 	}
@@ -20,7 +20,7 @@ class Y3kmenu extends Public_Controller {
 		$this->load->config('y3kmenu/y3kmenu');
 
 		$data = array(
-			'menu_items'    =>  $this->generate()
+			'menu_items'    =>  $this->_generate()
 		);
 
 		$this->load->view('dashboard', $data);

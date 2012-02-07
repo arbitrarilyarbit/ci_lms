@@ -1,14 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * User controller for the users module (frontend)
- *
- * @author 		Phil Sturgeon - PyroCMS Dev Team
- * @package 	PyroCMS
- * @subpackage 	Users module
- * @category	Modules
- */
-class Users extends Public_Controller
+class Users extends Main_Controller
 {
 	/**
 	 * Constructor method
@@ -20,9 +12,8 @@ class Users extends Public_Controller
 		parent::__construct();
 
 		// Load the required classes
-		$this->load->model('user_m');
+		//$this->load->model('user_m');
 		$this->load->helper('user');
-		$this->lang->load('user');
 		$this->load->library('form_validation');
 	}
 
@@ -93,12 +84,12 @@ class Users extends Public_Controller
 		$validation = array(
 			array(
 				'field' => 'email',
-				'label' => lang('user_email_label'),
+				'label' => 'Email',
 				'rules' => 'required|trim|callback__check_login'
 			),
 			array(
 				'field' => 'password',
-				'label' => lang('user_password_label'),
+				'label' => 'Password',
 				'rules' => 'required|min_length[6]|max_length[20]'
 			),
 		);
@@ -109,16 +100,13 @@ class Users extends Public_Controller
 		// If the validation worked, or the user is already logged in
 		if ($this->form_validation->run() or $this->current_user)
 		{
-			$this->session->set_flashdata('success', lang('user_logged_in'));
+			$this->session->set_flashdata('success', 'Login Successful');
 
 			// Kill the session
 			$this->session->unset_userdata('redirect_to');
 
 			// Deprecated.
 			$this->hooks->_call_hook('post_user_login');
-
-			// trigger a post login event for third party devs
-			Events::trigger('post_user_login');
 
 			redirect($redirect_to ? $redirect_to : '');
 		}
@@ -136,11 +124,8 @@ class Users extends Public_Controller
 	 */
 	public function logout()
 	{
-		// allow third party devs to do things right before the user leaves
-		Events::trigger('pre_user_logout');
-
 		$this->ion_auth->logout();
-		$this->session->set_flashdata('success', lang('user_logged_out'));
+		$this->session->set_flashdata('success', 'Logout Successful');
 		redirect('');
 	}
 

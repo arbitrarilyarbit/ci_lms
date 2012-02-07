@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pages extends Public_Controller
+class Pages extends Main_Controller
 {
 	/**
 	 * Constructor method
@@ -10,9 +10,6 @@ class Pages extends Public_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		
-		//helper to load partials
-		$this->load->helper('admin_theme');
 	}
 
 	/**
@@ -20,22 +17,8 @@ class Pages extends Public_Controller
 	 * @access public
 	 * @return void
 	 */
-	public function index()
-	{
-		$this->dashboard();
-	}
-
-	/**
-	 * dashboard method
-	 * @access public
-	 * @return void
-	 */
-	public function dashboard()
-	{
-		// Create page output
-		$this->template->title('Dashboard');
-
-		$this->template->build('pages/dashboard');
+	public function index() {
+		redirect();
 	}
 
 	/**

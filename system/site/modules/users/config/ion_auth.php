@@ -25,19 +25,14 @@
 	$config['tables']['meta']    = 'y3klms_profiles';
 
 	/**
-	 * Site Title, example.com
-	 */
-	//$config['site_title']		   = Settings::get('site_name');
-
-	/**
 	 * Admin Email, admin@example.com
 	 */
-	//$config['admin_email']		   = Settings::get('contact_email');
+	//$config['admin_email']		   = Settings::get('contact_email'); //TODO: admin email for site
 
 	/**
 	 * Default group, use name
 	 */
-	$config['default_group']       = 'user';
+	$config['default_group']       = 'student';
 
 	/**
 	 * Default administrators group, use name
@@ -60,12 +55,12 @@
 	 * A database column which is used to
 	 * login with.
 	 **/
-	$config['identity']            = 'email';
+	$config['identity']            = 'username'; //or, email
 
 	/**
 	 * Minimum Required Length of Password
 	 **/
-	$config['min_password_length'] = 6;
+	$config['min_password_length'] = 5;
 
 	/**
 	 * Maximum Allowed Length of Password
@@ -75,7 +70,7 @@
 	/**
 	 * Email Activation for registration
 	 **/
-	//$config['email_activation']    = Settings::get('activation_email');
+	$config['email_activation']    = 1; //1=Enabled|0=Disabled
 
 	/**
 	 * Allow users to be remembered and enable auto-login
